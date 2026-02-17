@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form - HTML/CSS Only</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-card">
+            <div class="form-header">
+                <h1>🎓 Student Registration</h1>
+                <p>Complete your details below</p>
+            </div>
+
+            <form id="studentForm" class="registration-form">
+
+
+                <!-- Name -->
+                <div class="input-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                    <span class="error-message" id="nameError">Name must be at least 2 characters</span>
+                </div>
+
+                <!-- Email -->
+                <div class="input-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+                    <span class="error-message" id="emailError">Please enter a valid email</span>
+                </div>
+
+                <!-- Date of Birth -->
+                <div class="input-group">
+                    <label for="dob">Date of Birth *</label>
+                    <input type="date" id="dob" name="dob" required>
+                    <span class="error-message" id="dobError">Date of birth is required</span>
+                </div>
+
+                <!-- Department -->
+                <div class="input-group">
+                    <label for="department">Department *</label>
+                    <select id="department" name="department" required>
+                        <option value="">Select Department</option>
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="Information Technology">Information Technology</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Mechanical">Mechanical</option>
+                        <option value="Civil">Civil</option>
+                        <option value="Chemical">Chemical</option>
+                    </select>
+                    <span class="error-message" id="deptError">Please select a department</span>
+                </div>
+
+                <!-- Phone -->
+                <div class="input-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" name="phone" placeholder="10-digit number" pattern="[0-9]{10}" required>
+                    <span class="error-message" id="phoneError">Enter valid 10-digit phone number</span>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn">
+                    <span>📝 Register Student</span>
+                </button>
+            </form>
+
+            <!-- Success/Status Message -->
+            <div class="status-message" id="statusMessage">
+                <div class="success-box">
+                    <span>✅ Student registered successfully!</span>
+                    <div class="student-data" id="studentData"></div>
+                </div>
+            </div>
+
+            <!-- Students List -->
+            <div class="students-section" id="studentsSection">
+                <h3>📋 Registered Students</h3>
+                <div class="students-list" id="studentsList">
+                    <!-- Students will appear here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+
+</body>
+</html>

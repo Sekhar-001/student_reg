@@ -10,10 +10,14 @@ A full-stack web application to register students using a form, validate input o
 📤 Fetch student data (JSON API)
 📋 Display registered students
 🔐 Secure queries using PDO
+
+
 🛠️ Tech Stack
 Frontend: HTML, CSS, JavaScript
 Backend: PHP
 Database: MySQL
+
+
 📂 Structure
 project/
 │── index.html
@@ -21,6 +25,8 @@ project/
 │── script.js
 │── save_student.php
 │── getStudents.php
+
+
 🗄️ Database
 CREATE DATABASE student_reg;
 
@@ -33,17 +39,22 @@ CREATE TABLE students (
   phone VARCHAR(15),
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+
 ▶️ Run
 Start XAMPP/WAMP
 Place project in htdocs
 Open:
 http://localhost/project-folder/
+
 📌 APIs
 POST /save_student.php → Add student
 GET /getStudents.php → Get students
+
 🔐 Security
 PDO prepared statements
 Frontend validation
+
 🔮 Future Scope
 Update & delete
 Search

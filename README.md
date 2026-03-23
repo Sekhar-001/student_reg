@@ -1,61 +1,109 @@
-Student Registration System
-📌 Overview
+# 🎓 Student Registration System
 
-A full-stack web application to register students using a form, validate input on the frontend, and store data in a MySQL database using PHP. It also fetches and displays student records dynamically.
+## 📌 Project Overview
 
-🚀 Features
-📝 Student registration form
-✅ JavaScript validation (name, email, DOB, phone)
-📥 Store data in MySQL
-📤 Fetch student data (JSON API)
-📋 Display registered students
-🔐 Secure queries using PDO
+The **Student Registration System** is a full-stack web application that allows users to enter student details through a form, validates the data using JavaScript, and stores it in a MySQL database using PHP. The system also retrieves and displays student records dynamically.
 
+---
 
-🛠️ Tech Stack
-Frontend: HTML, CSS, JavaScript
-Backend: PHP
-Database: MySQL
+## 🚀 Features
 
+* 📝 Student registration form
+* ✅ Client-side validation (JavaScript)
+* 📥 Store student data in MySQL
+* 📤 Fetch data using PHP API (JSON)
+* 📋 Display registered students
+* 🔐 Secure database operations using PDO
 
-📂 Structure
-project/
+---
+
+## 🛠️ Tech Stack
+
+| Layer    | Technology            |
+| -------- | --------------------- |
+| Frontend | HTML, CSS, JavaScript |
+| Backend  | PHP                   |
+| Database | MySQL                 |
+| Server   | XAMPP / WAMP / MAMP   |
+
+---
+
+## 📂 Project Structure
+
+```bash
+student-registration-system/
 │── index.html
 │── style.css
 │── script.js
 │── save_student.php
 │── getStudents.php
+│── database/
+│   └── student_reg.sql
+```
 
+---
 
-🗄️ Database
+## 🗄️ Database Schema
+
+```sql
 CREATE DATABASE student_reg;
+
+USE student_reg;
 
 CREATE TABLE students (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(100),
-  email VARCHAR(100),
-  dob DATE,
-  department VARCHAR(100),
-  phone VARCHAR(15),
+  name VARCHAR(100) NOT NULL,
+  email VARCHAR(100) NOT NULL,
+  dob DATE NOT NULL,
+  department VARCHAR(100) NOT NULL,
+  phone VARCHAR(15) NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+```
 
+---
 
-▶️ Run
-Start XAMPP/WAMP
-Place project in htdocs
-Open:
-http://localhost/project-folder/
+## ⚙️ Setup Instructions
 
-📌 APIs
-POST /save_student.php → Add student
-GET /getStudents.php → Get students
+1. Install and start **XAMPP/WAMP**
+2. Place project in `htdocs`
+3. Create database using the SQL above
+4. Update DB credentials in PHP files
+5. Run project in browser:
 
-🔐 Security
-PDO prepared statements
-Frontend validation
+```
+http://localhost/student-registration-system/
+```
 
-🔮 Future Scope
-Update & delete
-Search
-Admin login
+---
+
+## 📌 API Endpoints
+
+| Method | Endpoint          | Description        |
+| ------ | ----------------- | ------------------ |
+| POST   | /save_student.php | Add new student    |
+| GET    | /getStudents.php  | Fetch all students |
+
+---
+
+## 🔐 Validation Rules
+
+* Name → Minimum 2 characters
+* Email → Valid format
+* DOB → Age 16–100
+* Phone → 10 digits
+
+---
+
+## 🔮 Future Enhancements
+
+* Update & delete functionality
+* Search students
+* Admin login system
+* Dashboard
+
+---
+
+## 👨‍💻 Author
+
+Sekhar
